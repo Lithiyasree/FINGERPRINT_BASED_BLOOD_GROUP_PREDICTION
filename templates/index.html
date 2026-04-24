@@ -1,0 +1,118 @@
+<!-- ==================== index.html ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodPrint - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2v20M2 12h20M7 7l10 10M7 17l10-10"/>
+        </svg>
+        <span class="nav-title">BloodPrint</span>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/about" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Fingerprint Blood Group
+          <span class="gradient-text">Classification</span>
+        </h1>
+        <p class="hero-subtitle">
+          Advanced deep learning system using CNN and Grad-CAM to predict blood groups from fingerprint images with explainable AI visualization
+        </p>
+      </div>
+
+      <!-- Upload Card -->
+      <div class="upload-card">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+          <div class="upload-content">
+            <div class="upload-icon-wrapper">
+              <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <h2 class="upload-title">Upload Fingerprint Image</h2>
+            <p class="upload-desc">Supports JPG, PNG, BMP formats</p>
+            
+            <label for="file-input" class="btn-primary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              Choose File
+            </label>
+            <input type="file" id="file-input" name="file" accept="image/*" required hidden>
+            <span id="file-name" class="file-name"></span>
+            
+            <button type="submit" class="btn-secondary" id="predict-btn" disabled>
+              Analyze Fingerprint
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features-grid">
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <h3 class="feature-title">CNN Model</h3>
+          <p class="feature-desc">8 Blood Types</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <h3 class="feature-title">Grad-CAM</h3>
+          <p class="feature-desc">Visual Explanation</p>
+        </div>
+        <div class="feature-card">
+          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <h3 class="feature-title">High Accuracy</h3>
+          <p class="feature-desc">95%+ Confidence</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BloodPrint | Developed by Lithiyasree R</p>
+  </footer>
+
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const fileName = document.getElementById('file-name');
+    const predictBtn = document.getElementById('predict-btn');
+
+    fileInput.addEventListener('change', function(e) {
+      if (e.target.files.length > 0) {
+        fileName.textContent = e.target.files[0].name;
+        predictBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

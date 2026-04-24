@@ -1,0 +1,239 @@
+<!-- ==================== about.html ==================== -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodPrint - About</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2v20M2 12h20M7 7l10 10M7 17l10-10"/>
+        </svg>
+        <span class="nav-title">BloodPrint</span>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link active">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <div class="container">
+      <div class="about-header">
+        <h1 class="about-title">About This Project</h1>
+        <p class="about-subtitle">Deep learning for biometric blood group classification</p>
+      </div>
+
+      <!-- Overview Card -->
+      <div class="about-card">
+        <div class="about-card-header">
+          <svg class="about-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <h2 class="about-card-title">Project Overview</h2>
+        </div>
+        <p class="about-text">
+          This system uses <strong>Convolutional Neural Networks (CNN)</strong> combined with 
+          <strong>Grad-CAM</strong> (Gradient-weighted Class Activation Mapping) to predict human 
+          blood groups from fingerprint images. The model analyzes unique fingerprint patterns and 
+          provides visual explanations of its decision-making process, making the AI transparent and interpretable.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-box stat-red">
+            <p class="stat-label">Blood Types</p>
+            <p class="stat-value">8 Classes</p>
+          </div>
+          <div class="stat-box stat-blue">
+            <p class="stat-label">Model Type</p>
+            <p class="stat-value">CNN</p>
+          </div>
+          <div class="stat-box stat-purple">
+            <p class="stat-label">Image Size</p>
+            <p class="stat-value">128×128</p>
+          </div>
+          <div class="stat-box stat-orange">
+            <p class="stat-label">Framework</p>
+            <p class="stat-value">TensorFlow</p>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Model Performance -->
+      <div class="about-card">
+        <div class="about-card-header">
+          <svg class="about-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+          <h2 class="about-card-title">Model Performance</h2>
+        </div>
+
+        <div class="performance-grid">
+          <div class="performance-item">
+            <div class="performance-image">
+              <img src="{{ url_for('static', filename='graphs/accuracy.png') }}" alt="Accuracy Graph" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="performance-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="performance-title">Training & Validation Accuracy</h3>
+            <p class="performance-desc">Accuracy progression over epochs</p>
+            <span class="performance-badge">95%</span>
+          </div>
+
+          <div class="performance-item">
+            <div class="performance-image">
+              <img src="{{ url_for('static', filename='graphs/loss.png') }}" alt="Loss Graph" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="performance-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="performance-title">Training & Validation Loss</h3>
+            <p class="performance-desc">Loss reduction during training</p>
+            <span class="performance-badge">0.13</span>
+          </div>
+
+          <div class="performance-item">
+            <div class="performance-image">
+              <img src="{{ url_for('static', filename='graphs/classwise_classification_report.png') }}" alt="Classification Report" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="performance-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="performance-title">Classification Report</h3>
+            <p class="performance-desc">Per-class performance metrics</p>
+            <span class="performance-badge">F1: 0.93</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample Predictions -->
+      <div class="about-card">
+        <div class="about-card-header">
+          <svg class="about-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <h2 class="about-card-title">Sample Predictions</h2>
+        </div>
+
+        <div class="samples-grid">
+          <div class="sample-item">
+            <div class="sample-image">
+              <img src="{{ url_for('static', filename='graphs/sample1_A+.png') }}" alt="Sample 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sample-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2v20M2 12h20M7 7l10 10M7 17l10-10"/>
+                </svg>
+              </div>
+            </div>
+            <div class="sample-info">
+              <p class="sample-text"><strong>True:</strong> A+</p>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="sample-text"><strong>Pred:</strong> A+</p>
+          </div>
+
+          <div class="sample-item">
+            <div class="sample-image">
+              <img src="{{ url_for('static', filename='graphs/sample1_A+_gradcam.png') }}" alt="Sample 1 GradCAM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sample-placeholder gradcam-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+            </div>
+            <p class="sample-text centered">Grad-CAM Heatmap</p>
+          </div>
+
+          <div class="sample-item">
+            <div class="sample-image">
+              <img src="{{ url_for('static', filename='graphs/sample2_B+.png') }}" alt="Sample 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sample-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 2v20M2 12h20M7 7l10 10M7 17l10-10"/>
+                </svg>
+              </div>
+            </div>
+            <div class="sample-info">
+              <p class="sample-text"><strong>True:</strong> B+</p>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <p class="sample-text"><strong>Pred:</strong> B+</p>
+          </div>
+
+          <div class="sample-item">
+            <div class="sample-image">
+              <img src="{{ url_for('static', filename='graphs/sample2_B+_gradcam.png') }}" alt="Sample 2 GradCAM" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="sample-placeholder gradcam-placeholder">
+                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+            </div>
+            <p class="sample-text centered">Grad-CAM Heatmap</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Architecture -->
+      <div class="tech-card">
+        <h2 class="tech-title">Technical Architecture</h2>
+        <div class="tech-grid">
+          <div class="tech-column">
+            <h3 class="tech-subtitle">Model Layers</h3>
+            <ul class="tech-list">
+              <li>• Conv2D (32 filters) + MaxPool</li>
+              <li>• Conv2D (64 filters) + MaxPool</li>
+              <li>• Conv2D (128 filters) + MaxPool</li>
+              <li>• Dense (128 units) + Dropout</li>
+              <li>• Output (8 classes, Softmax)</li>
+            </ul>
+          </div>
+          <div class="tech-column">
+            <h3 class="tech-subtitle">Features</h3>
+            <ul class="tech-list">
+              <li>• Explainable AI with Grad-CAM</li>
+              <li>• Real-time prediction</li>
+              <li>• Confidence scoring</li>
+              <li>• Visual heatmap generation</li>
+              <li>• 8 blood type classification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BloodPrint | Developed by Lithiyasree R</p>
+    <p class="footer-sub">Powered by TensorFlow & Flask</p>
+  </footer>
+</body>
+</html>

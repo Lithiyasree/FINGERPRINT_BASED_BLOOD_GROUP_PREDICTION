@@ -1,0 +1,50 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore model files (large ML files)
+*.keras
+*.h5
+*.pkl
+
+# Ignore logs
+*.log
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Database files (if any)
+*.db
+
+# Uploads (if you store user images)
+uploads/
+
+# Flask instance folder
+instance/
+
+# Keep static and templates (IMPORTANT)
+# Do NOT ignore these
+# static/
+# templates/
