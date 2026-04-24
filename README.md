@@ -1,11 +1,7 @@
 # 🩸 Fingerprint Blood Group Prediction using CNN Model
 
 ## 📌 Project Overview
-This project predicts a person's **blood group from fingerprint images** using a **Convolutional Neural Network (CNN)**.  
-It also provides a **confidence score (%)** to indicate how confident the model is about its prediction.
-Grad-CAM visualization to highlight the fingerprint region that contributes most to the prediction.
-
-A **Flask-based web application** is developed to allow users to upload fingerprint images and get instant results.
+This project predicts a person's **blood group from fingerprint images** using a **Convolutional Neural Network (CNN)**. It also provides a **confidence score (%)** to indicate how confident the model is about its prediction. Grad-CAM visualization to highlight the fingerprint region that contributes most to the prediction. A **Flask-based web application** is developed to allow users to upload fingerprint images and get instant results.
 
 ---
 
@@ -17,7 +13,7 @@ A **Flask-based web application** is developed to allow users to upload fingerpr
 - 📊 Displays **confidence score (%)**
 - 🔥 Grad-CAM heatmap for visualization
 - 📈 Accuracy, loss, confusion matrix graphs
-- 🌐 Simple and user-friendly web interface
+- 🌐 User-friendly web interface
 
 ---
 
@@ -25,7 +21,7 @@ A **Flask-based web application** is developed to allow users to upload fingerpr
 - **Frontend:** HTML, CSS
 - **Backend:** Python, Flask
 - **ML Framework:** TensorFlow / Keras
-- **Libraries:** NumPy, OpenCV
+- **Libraries:** NumPy, Pandas
 - **Visualization:** Matplotlib, Seaborn
 
 ---
